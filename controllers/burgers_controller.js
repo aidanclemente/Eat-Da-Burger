@@ -19,4 +19,29 @@ router.get("/", function(req, res) {
     
 });
 
+router.post("/create", function(req, res) {
+    burger.create([
+        "burger_name"
+    ], [
+        req.body.burger_name
+    ], function(result) {
+        res.redirect("/");
+    });
+});
+
+router.put("/burger/update/:id", function(req, res) {
+    var condition = "id = " + req.params.id;
+    console.log("put condition: ", condition);
+
+    burger.update({
+        devoured: true
+    }, condition, function(result) {
+        if (result.changedRows == 0) {
+            return res.status(404).end();
+        } else {
+            res.redirect("/");
+        }
+    });
+});
+
 module.exports = router;

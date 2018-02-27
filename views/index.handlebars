@@ -11,7 +11,13 @@
         {{#unless devoured}}
             {{> burgers/burger-block devoured=true}}
             {{!-- Devour Button --}}
-            {{> burgers/devour-burger}}
+            {{!-- {{> burgers/devour-burger}} --}}
+
+            {{!-- This isn't sending right: Message: Cannot PUT /burger/update/3 --}}
+            <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+                <input type="hidden" name="devour" value="true">
+                <button class="devour" data-id="{{id}}" data-eat="{{devoured}}">Devour!</button>
+            </form>
         {{/unless}}
     {{/each}}
 </ul>
