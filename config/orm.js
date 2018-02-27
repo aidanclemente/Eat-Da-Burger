@@ -8,7 +8,18 @@ var connection = require("../config/connection.js");
 // insertOne()
 // updateOne()
 
-
+var orm = {
+    all: function(tableInput, callBack) {
+        var queryString = "SELECT * FROM " + tableInput + ";";
+        
+        connection.query(queryString, function(err, results) {
+            if (err) {
+                throw err;
+            }
+            callBack(results);
+        });
+    },//add next method here
+};
 // Export the ORM object in module.exports.
 
 module.exports = orm;
