@@ -10,12 +10,13 @@ var burger = require("../models/burger.js");
 
 router.get("/", function(req, res) {
     burger.all(function(burger_data) {
+        var hbsObject = { burgers: burger_data };
         console.log("------ Burger Data -------");
-        console.log(burger_data);
+        console.log(hbsObject);
         console.log("--------------------------");
-        res.render("index", {burger_data});
-    })
+        res.render("index", hbsObject);
+    });
     
-})
+});
 
 module.exports = router;

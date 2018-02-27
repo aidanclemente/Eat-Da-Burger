@@ -6,12 +6,11 @@
         {{!-- If the burgers are not devoured --}}
         {{!-- Then they appear here with a devour button next to it --}}
 
-
-    {{#each burger}}
-        {{#unless this.devoured}}
-            <p>These need eaten</p>
-            {{> burgers/burger-block devoured=false}}
-        {{!-- Need a devour it button here --}}
+    <h3>These need eaten!</h3>
+    {{#each burgers}} 
+        {{#unless devoured}}
+            {{> burgers/burger-block devoured=true}}
+            {{!-- Devour Button --}}
             {{> burgers/devour-burger}}
         {{/unless}}
     {{/each}}
@@ -22,20 +21,19 @@
     {{!-- We need to loop through all of the burgers again --}}
         {{!-- If the burgers are devoured --}}
         {{!-- Then they appear over here without a button and grayed out --}}
-
-    {{#each burger}}
-        {{#if this.devoured}}
-            <p>Eat some more</p>
-            {{> burgers/burger-block devoured=true}}
+    {{#each burgers}}
+        {{#if devoured}}
+            
+            {{> burgers/burger-block devoured=false}}
         {{/if}}
     {{/each}}
 </ul>
 
 <h2>Add A Burger</h2>
-<form action="" class="new_burger-form">
+<form action="/create" class="new_burger-form" method="POST">
     <div class="form-group">
         <label for="burger_name">What Burger Would You Like to Add?</label>
-        <input type="text" id="burger_name" name="burger_name">
+        <input type="text" id="burger_name" name="burger_name" placeholder="Add Burger Here">
     </div>
-    <button type="submit">Add Burger</button>
+    <button id="addBurgerButton" type="submit">Add Burger</button>
 </form>

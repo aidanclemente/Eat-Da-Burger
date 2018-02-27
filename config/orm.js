@@ -18,7 +18,10 @@ var orm = {
             }
             callBack(results);
         });
-    },//add next method here
+    },
+    create: function(table, column, value, callBack) {
+        var queryString = "INSERT INTO " + table;
+    }
 };
 // Export the ORM object in module.exports.
 
