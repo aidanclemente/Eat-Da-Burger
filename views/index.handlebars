@@ -2,31 +2,18 @@
 
 <h2>Burgers To Eat</h2>
 <ul>
-    {{!-- We need to loop through all of the burgers --}}
-        {{!-- If the burgers are not devoured --}}
-        {{!-- Then they appear here with a devour button next to it --}}
-
     <h3>These need eaten!</h3>
     {{#each burgers}} 
         {{#unless devoured}}
             {{> burgers/burger-block devoured=true}}
             {{!-- Devour Button --}}
-            {{!-- {{> burgers/devour-burger}} --}}
-
-            {{!-- This isn't sending right: Message: Cannot PUT /burger/update/3 --}}
-            <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
-                <input type="hidden" name="devour" value="true">
-                <button class="devour" data-id="{{id}}" data-eat="{{devoured}}">Devour!</button>
-            </form>
+            {{> burgers/devour-burger}}
         {{/unless}}
     {{/each}}
 </ul>
 
 <h2>These Were Tasty!</h2>
 <ul>
-    {{!-- We need to loop through all of the burgers again --}}
-        {{!-- If the burgers are devoured --}}
-        {{!-- Then they appear over here without a button and grayed out --}}
     {{#each burgers}}
         {{#if devoured}}
             

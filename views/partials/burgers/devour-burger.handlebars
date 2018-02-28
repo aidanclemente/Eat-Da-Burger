@@ -1,1 +1,4 @@
-<button class="devour" data-id="{{id}}" data-eat="{{devoured}}">partial button!</button>
+<form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+    <input type="hidden" name="devour" value="true">
+    <button class="devour" data-id="{{id}}" data-eat="{{devoured}}">Devour!</button>
+</form>
