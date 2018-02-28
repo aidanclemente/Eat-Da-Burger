@@ -2,6 +2,10 @@ body {
     background-color: #F5BD5A;
 }
 
+img {
+    width: 30vw;
+}
+
 h4 {
     padding-top: 15px;
     padding-bottom: 15px;
@@ -15,4 +19,39 @@ p {
     border: 1px solid black;
     padding: 2px;
     padding-left: 10px;
+    width: 100%;
+    background-color: white;
+}
+
+#addBurgerButton {
+    background-color: darkgreen;
+    color: white;
+    border: 1px solid black;
+    height: 36px;
+}
+
+#burger_name {
+    line-height: 33px;
+    text-align: center;
+    width: 32vw;
+    border: 1px solid black;
+}
+
+#mainHeader {
+    margin: 30px;
+}
+
+.devour {
+    background-color: #DD0A07;
+    color: white;
+    border: 1px solid black;
+}
+
+.devour:hover {
+    font-size: 18px;
+    background-color: red;
+}
+
+#mainHeader {
+    margin: 30px;
 }
