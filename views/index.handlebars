@@ -1,32 +1,47 @@
-<h1>Eat Da Burger</h1>
+<h1 class="text-center">Eat Da Burger</h1>
 
-<h2>Burgers To Eat</h2>
-<ul>
-    <h3>These need eaten!</h3>
-    {{#each burgers}} 
-        {{#unless devoured}}
-            {{> burgers/burger-block devoured=true}}
-            {{!-- Devour Button --}}
-            {{> burgers/devour-burger}}
-        {{/unless}}
-    {{/each}}
-</ul>
-
-<h2>These Were Tasty!</h2>
-<ul>
-    {{#each burgers}}
-        {{#if devoured}}
-            
-            {{> burgers/burger-block devoured=false}}
-        {{/if}}
-    {{/each}}
-</ul>
-
-<h2>Add A Burger</h2>
-<form action="/create" class="new_burger-form" method="POST">
-    <div class="form-group">
-        <label for="burger_name">What Burger Would You Like to Add?</label>
-        <input type="text" id="burger_name" name="burger_name" placeholder="Add Burger Here">
+<div class="row">
+    <div class="col-sm-2"></div>
+    
+    <div class="col-sm-4">
+        <h4>These need eaten!</h4>
+        {{#each burgers}} 
+            {{#unless devoured}}
+            <div class="row">
+                <div class="col-sm-8">
+                  {{> burgers/burger-block devoured=true}}  
+                </div>
+                
+                {{!-- Devour Button --}}
+                {{> burgers/devour-burger}}
+            </div>
+            {{/unless}}
+        {{/each}}
     </div>
-    <button id="addBurgerButton" type="submit">Add Burger</button>
-</form>
+
+    <div class="col-sm-1"></div>
+
+    <div class="col-sm-4">
+        <h4>These Were Tasty!</h4>
+        <div>
+            {{#each burgers}}
+                {{#if devoured}} 
+                    {{> burgers/burger-block devoured=false}}
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
+    
+</div>
+
+<h3 class="text-center">What Burger Would You Like to Add?</h3>
+
+<div class="text-center">
+    <form action="/create" class="new_burger-form" method="POST">
+        <div class="form-group">
+            {{!-- <label for="burger_name">What Burger Would You Like to Add?</label> --}}
+            <input type="text" id="burger_name" name="burger_name" placeholder="Add Burger Here">
+            <button id="addBurgerButton" type="submit">Add Burger</button>
+        </div>
+    </form>
+</div>

@@ -1,4 +1,6 @@
-<form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
-    <input type="hidden" name="devour" value="true">
-    <button class="devour" data-id="{{id}}" data-eat="{{devoured}}">Devour!</button>
-</form>
+<div class="input-group-append">
+    <form action="/burger/update/{{this.id}}?_method=PUT" method="POST">
+        <input type="hidden" name="devour" value="true">
+        <button class="btn-sm btn-outline-secondary devour" data-id="{{id}}" data-eat="{{devoured}}">Devour!</button>
+    </form>
+</div>
