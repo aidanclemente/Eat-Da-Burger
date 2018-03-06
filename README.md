@@ -2,7 +2,7 @@
 
 ## App Description:
 
-<img style="width: 500px" src="public/assets/img/appPic.png" alt="application picture">
+<img style="width: 75vw" src="public/assets/img/appPic.png" alt="application picture">
 
 ### Eat Da Burger is a full-stack burger logger that utilizes MySQL, Node, Express, Twitter Bootstrap, Handlebars and a homemade ORM. The MVC design pattern was followed, Node and MySQL to query and route data in this app, and Handlebars to generate the HTML.
 
