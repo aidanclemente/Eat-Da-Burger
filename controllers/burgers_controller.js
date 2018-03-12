@@ -11,9 +11,9 @@ var burger = require("../models/burger.js");
 router.get("/", function(req, res) {
     burger.all(function(burger_data) {
         var hbsObject = { burgers: burger_data };
-        console.log("------ Burger Data -------");
-        console.log(hbsObject);
-        console.log("--------------------------");
+        // console.log("------ Burger Data -------");
+        // console.log(hbsObject);
+        // console.log("--------------------------");
         res.render("index", hbsObject);
     });
     
