@@ -8,7 +8,7 @@
 
 ## Demo:
 
-### Eat Da Burger is deployed on Heroku. Please, [click here](https://lit-waters-98789.herokuapp.com/) to demo this app.
+### Eat Da Burger is deployed on Heroku. Please,demo this app here: [https://lit-waters-98789.herokuapp.com/](https://lit-waters-98789.herokuapp.com/)
 
 ## Run Locally:
 
